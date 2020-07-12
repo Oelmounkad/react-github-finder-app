@@ -1,11 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class UserItem extends Component {
+const UserItem = (props) =>  {
 
-
-
-    render() {
-        const {login , avatar_url , html_url} = this.props.user;
+        const {login , avatar_url , html_url} = props.user;
         return (
             <div className="col-md-3 card text-center mr-2">
                 <img src={avatar_url} alt="" className="round-img card-img-top mx-auto" style={{ width: '60px'}} />
@@ -15,7 +12,7 @@ export class UserItem extends Component {
         </div>
             </div>
         )
-    }
+    
 }
 
 export default UserItem

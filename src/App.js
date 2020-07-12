@@ -13,8 +13,6 @@ class App extends Component {
     <div >
       <Navbar title="Github finder" icon="fab fa-github" />
       <Users />
-      <h1>Hello App</h1>
-
     </div>
 
     );
