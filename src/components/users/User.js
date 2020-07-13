@@ -1,14 +1,17 @@
-import React, { Component } from 'react'
+import React, {useEffect} from 'react'
 import Spinner from '../layout/Spinner'
 import {Link} from 'react-router-dom'
 
 
-export class User extends Component {
+const User = ({user,loading,getUser,match}) => {
 
-    componentDidMount(){
-        this.props.getUser(this.props.match.params.login)
-    }
-    render() {
+        useEffect( () => {
+            getUser(match.params.login)
+        },[])
+
+
+  
+
         const {name,
             avatar_url
             ,location,
@@ -21,8 +24,7 @@ export class User extends Component {
             public_repos,
             public_gists,
             hireable
-        } = this.props.user
-        const {loading} = this.props
+        } = user
 
         if (loading) return <Spinner />
         return (
@@ -35,7 +37,7 @@ export class User extends Component {
         <p>Following: {following}</p>
             </>
         )
-    }
+   
 }
 
 export default User
